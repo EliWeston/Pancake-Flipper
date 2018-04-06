@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plate2 : MonoBehaviour {
 	
-	[Header ("Set in INspector")]
+	[Header ("Set in Inspector")]
 
 
 	public float speed = 1f;
@@ -15,7 +15,6 @@ public class Plate2 : MonoBehaviour {
 
 
 	void Start () {
-		//dropping apples every second
 	}
 
 	void Update () {

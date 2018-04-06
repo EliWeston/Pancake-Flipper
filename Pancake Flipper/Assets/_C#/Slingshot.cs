@@ -72,7 +72,7 @@ public class Slingshot : MonoBehaviour {
 			aimingMode = false;
 			pancakeRigidbody.isKinematic = false;
 			pancakeRigidbody.velocity = -mouseDelta * velocityMult;
-
+			pancake = null;
 		}
 	}
 }
