@@ -15,6 +15,13 @@ public class Slingshot : MonoBehaviour {
 	public bool aimingMode;
 
 	private Rigidbody	pancakeRigidbody;
+	private Pancake pancakeScript;
+
+	//public float    torque;
+	//int X;
+	//int Y;
+
+	//public float  rotationsPerMinute = 10.00f;
 
 	static public Vector3 LAUNCH_POS {
 		get {
@@ -48,6 +55,8 @@ public class Slingshot : MonoBehaviour {
 
 		pancakeRigidbody = pancake.GetComponent<Rigidbody> ();
 		pancakeRigidbody.isKinematic = true;
+
+		pancakeScript = pancake.GetComponent<Pancake> ();
 	}
 
 	void Update(){
@@ -72,6 +81,8 @@ public class Slingshot : MonoBehaviour {
 			aimingMode = false;
 			pancakeRigidbody.isKinematic = false;
 			pancakeRigidbody.velocity = -mouseDelta * velocityMult;
+
+			pancakeScript.isFlying = true;
 			pancake = null;
 		}
 	}

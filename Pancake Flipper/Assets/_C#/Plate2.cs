@@ -8,11 +8,11 @@ public class Plate2 : MonoBehaviour {
 
 
 	public float speed = 1f;
-
 	public float leftAndRightEdge = 30f;
-
 	public float chanceToChangeDirections = 0.05f;
 
+	public GameObject	pancake;
+	private Pancake pancakeScript;
 
 	void Start () {
 	}
@@ -30,6 +30,19 @@ public class Plate2 : MonoBehaviour {
 			speed = -Mathf.Abs (speed);
 		}
 	}
+
+	void OnTriggerStay (Collider other)
+	{ 
+		if (other.gameObject.tag == "Pancake") {
+			pancake = other.gameObject;
+			pancakeScript = pancake.GetComponent<Pancake> ();
+			pancakeScript.isFlying = false;
+			pancake.transform.rotation = Quaternion.Euler(0,0,0);
+			pancake.transform.parent = this.transform;
+			pancake = null;
+		}
+	}
+
 
 	void FixedUpdate () {
 		if (Random.value < chanceToChangeDirections) {
