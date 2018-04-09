@@ -15,7 +15,7 @@ public class Slingshot : MonoBehaviour {
 	public bool aimingMode;
 
 	private Rigidbody	pancakeRigidbody;
-	private Pancake pancakeScript;
+	private Pancake 	pancakeScript;
 
 	//public float    torque;
 	//int X;
@@ -53,7 +53,7 @@ public class Slingshot : MonoBehaviour {
 		pancake.transform.position = launchPos;
 		//projectile.GetComponent<Rigidbody> ().isKinematic = true;
 
-		pancakeRigidbody = pancake.GetComponent<Rigidbody> ();
+		pancakeRigidbody = pancake.GetComponentInChildren<Rigidbody> ();
 		pancakeRigidbody.isKinematic = true;
 
 		pancakeScript = pancake.GetComponent<Pancake> ();
