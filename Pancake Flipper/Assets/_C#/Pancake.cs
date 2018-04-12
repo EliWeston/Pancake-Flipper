@@ -12,6 +12,7 @@ public class Pancake : MonoBehaviour {
 	private GameObject cylinder;
 	private GameObject	pancake;
 	private Pancake pancakeScript;
+	public float panHeight;
 
 	[Header("Set in Inspector")]
 	public GameObject plate;
@@ -27,7 +28,11 @@ public class Pancake : MonoBehaviour {
 			
 			cylChild.transform.Rotate (0, 0, -24 * rotationsPerMinute * Time.deltaTime, 0);
 		}
+	panHeight = this.gameObject.transform.position.y;
 	
 }
+	void OnCollision (){
+		isFlying = false;
 	
+}
 }

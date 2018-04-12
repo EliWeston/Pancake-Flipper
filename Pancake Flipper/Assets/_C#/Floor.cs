@@ -23,6 +23,7 @@ public class Floor : MonoBehaviour {
 
 	void destroyGameObject ()
 	{
+		
 		Destroy (pancake);
 	}	
 

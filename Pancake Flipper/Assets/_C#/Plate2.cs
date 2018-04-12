@@ -18,12 +18,15 @@ public class Plate2 : MonoBehaviour {
 	private GameObject pancake;
 	private Pancake pancakeScript;
 	private GameObject lastPancake;
+	private GameObject plate;
 	//private bool firstTime = true;
 	//Collider capColl;
 	//FixedJoint joint;
 
 
 	void Start () {
+
+	plate = this.gameObject;
         
     }
 
@@ -40,8 +43,12 @@ public class Plate2 : MonoBehaviour {
 		} else if (pos.x > leftAndRightEdge) {
 			speed = -Mathf.Abs (speed);
 		}
-		if (cylinder.transform.position.y >= lastPancake.transform.position.y) { 
-			panTrig.transform.position = new Vector3 (cylinder.transform.position.x, cylinder.transform.position.y + collMover, cylinder.transform.position.z);
+		if ((cylinder != null) && (lastPancake != null)) {
+			if (cylinder.transform.position.y >= lastPancake.transform.position.y) { 
+				panTrig.transform.position = new Vector3 (cylinder.transform.position.x, cylinder.transform.position.y + collMover, cylinder.transform.position.z);
+			}
+		} else {
+				panTrig.transform.position = new Vector3 (plate.transform.position.x, plate.transform.position.y + collMover, plate.transform.position.z);
 		}
 	}
 
