@@ -6,18 +6,33 @@ public class Pancake : MonoBehaviour {
 
 	public float rotationsPerMinute = 10.0f;
 	public bool isFlying = false;
+
+	Collider pancakeColl;
+	Collider myCollider;
+	private GameObject cylinder;
+	private GameObject	pancake;
+	private Pancake pancakeScript;
+	public float panHeight;
+
+	[Header("Set in Inspector")]
+	public GameObject plate;
+	public GameObject cylChild;
  
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{  
 		if (isFlying == true) {
-
-			transform.Rotate (0, 0, -24 * rotationsPerMinute * Time.deltaTime, 0);
+			
+			cylChild.transform.Rotate (0, 0, -24 * rotationsPerMinute * Time.deltaTime, 0);
 		}
+	panHeight = this.gameObject.transform.position.y;
+	
+}
+	void OnCollision (){
+		isFlying = false;
 	
 }
 }
