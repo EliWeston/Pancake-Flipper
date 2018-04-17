@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Plate2 : MonoBehaviour {
 	
@@ -19,14 +21,20 @@ public class Plate2 : MonoBehaviour {
 	private Pancake pancakeScript;
 	private GameObject lastPancake;
 	private GameObject plate;
-	//private bool firstTime = true;
-	//Collider capColl;
-	//FixedJoint joint;
+    //private bool firstTime = true;
+    //Collider capColl;
+    //FixedJoint joint;
 
+    [Header("Set Dynamically")]
+    public Text scoreGT;
+    static public int lowScore = 0;
 
 	void Start () {
 
-	plate = this.gameObject;
+	    plate = this.gameObject;
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        scoreGT = scoreGO.GetComponent<Text>();
+        scoreGT.text = "0";
         
     }
 
@@ -70,9 +78,17 @@ public class Plate2 : MonoBehaviour {
 			pancake = null;
 			//cylinder = null;
 			lastPancake = cylinder;
-			//panTrig = this.gameObject.transform.GetChild();
+            //panTrig = this.gameObject.transform.GetChild();
 
-		}
+            lowScore += 1;
+            scoreGT.text = lowScore.ToString();
+            if (lowScore > HighScore.score)
+            {
+                HighScore.score = lowScore;
+            }
+        }
+        
+
 		//MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
        // CombineInstance[] combine = new CombineInstance[meshFilters.Length];
       //  int i = 0;
@@ -89,6 +105,8 @@ public class Plate2 : MonoBehaviour {
 	void FixedUpdate () {
 		if (Random.value < chanceToChangeDirections) {
 			speed *= -1;
-		}
-}
+            
+        }
+        scoreGT.text = lowScore.ToString();
+    }
 }
