@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pancake Flipper", "Pancake Flipper.csproj", "{76B652D4-7D2E-CBB7-4A5C-8770ADB3ADE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pancake Flipper.Editor", "Pancake Flipper.Editor.csproj", "{92144C80-F799-4803-3714-265698C87BAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{76B652D4-7D2E-CBB7-4A5C-8770ADB3ADE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76B652D4-7D2E-CBB7-4A5C-8770ADB3ADE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76B652D4-7D2E-CBB7-4A5C-8770ADB3ADE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92144C80-F799-4803-3714-265698C87BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92144C80-F799-4803-3714-265698C87BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92144C80-F799-4803-3714-265698C87BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92144C80-F799-4803-3714-265698C87BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

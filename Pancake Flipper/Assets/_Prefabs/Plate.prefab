@@ -157,9 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221e7a37c6cd50044b72cc6a0d4d48fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panTrig: {fileID: 0}
   speed: 0.1
   leftAndRightEdge: 5
   chanceToChangeDirections: 0
+  collMover: 1
+  scoreGT: {fileID: 0}
 --- !u!136 &136817623517765296
 CapsuleCollider:
   m_ObjectHideFlags: 1
