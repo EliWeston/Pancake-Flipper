@@ -5,7 +5,11 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefabPancake: {fileID: 1887954906159820, guid: 0f5f67ee70fddf44ea9ad23b26b4fa6a,
+      type: 2}
+  - launchPoint: {instanceID: 0}
+  - pancake: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

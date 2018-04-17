@@ -18,6 +18,7 @@ public class Floor : MonoBehaviour {
 			cylinder = other.gameObject;
 			pancake = cylinder.transform.parent.gameObject;
 			destroyGameObject();
+            Plate2.lowScore -= 1;
 			}
 	}
 

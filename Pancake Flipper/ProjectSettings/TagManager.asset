@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pancake
   - Cylinder
+  - LaunchPoint
+  - ScoreTrigger
   layers:
   - Default
   - TransparentFX
