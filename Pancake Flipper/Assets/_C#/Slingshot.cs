@@ -7,6 +7,7 @@ public class Slingshot : MonoBehaviour {
 	[Header("Set in Inspector")]
 	public GameObject 	prefabPancake;
 	public float		velocityMult = 8f;
+    
 
 	[Header("Set Dynamically")]
 	public GameObject	launchPoint;
@@ -16,6 +17,7 @@ public class Slingshot : MonoBehaviour {
 
 	private Rigidbody	pancakeRigidbody;
 	private Pancake 	pancakeScript;
+    private GameObject pan;
 
 	//public float    torque;
 	//int X;
@@ -56,7 +58,10 @@ public class Slingshot : MonoBehaviour {
 		pancakeRigidbody = pancake.GetComponentInChildren<Rigidbody> ();
 		pancakeRigidbody.isKinematic = true;
 
+
 		pancakeScript = pancake.GetComponent<Pancake> ();
+
+        pan = this.gameObject.transform.Find("Pan").gameObject;
 	}
 
 	void Update(){
@@ -76,14 +81,21 @@ public class Slingshot : MonoBehaviour {
 		}
 		Vector3 projPos = launchPos + mouseDelta;
 		pancake.transform.position = projPos;
+        pan.transform.position = projPos;
 
 		if (Input.GetMouseButtonUp (0)) {
 			aimingMode = false;
 			pancakeRigidbody.isKinematic = false;
 			pancakeRigidbody.velocity = -mouseDelta * velocityMult;
-
+            pan.transform.Rotate(0, 0, -60);
+            Invoke("panReset",1);
 			pancakeScript.isFlying = true;
 			pancake = null;
 		}
 	}
+    void panReset()
+    {
+        pan.transform.Rotate(0, 0, 60);
+        pan.transform.localPosition = Vector3.zero;
+    }
 }
